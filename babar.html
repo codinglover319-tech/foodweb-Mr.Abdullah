@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdulla Slider</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fafafa;
+    }
+
+    .abdulla {
+      width: 900px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slidercards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.6s ease;
+    }
+
+    .slidercard {
+      flex: 0 0 250px;
+      margin: 0 10px;
+      transition: transform 0.6s, opacity 0.6s, border 0.4s;
+      opacity: 0.6;
+      transform: scale(0.8);
+    }
+
+    .slidercard img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: border-radius 0.4s, border 0.4s;
+    }
+
+    .slidercard.active {
+      transform: scale(1.2);
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .slidercard.active img {
+      border-radius: 20px;
+      border: 5px solid #000;
+    }
+
+    /* ✅ Dots renamed */
+    .abdulladots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .abdulladot {
+      width: 12px;
+      height: 12px;
+      background: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .abdulladot.active {
+      background: #e74c3c;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="abdulla">
+      <div class="slidercards" id="slidercards"></div>
+    </div>
+    <div class="abdulladots" id="abdulladots"></div>
+  </div>
+
+  <script>
+    const images = [
+      "https://picsum.photos/id/1015/600/400",
+      "https://picsum.photos/id/1025/600/400",
+      "https://picsum.photos/id/1035/600/400",
+      "https://picsum.photos/id/1045/600/400",
+      "https://picsum.photos/id/1055/600/400"
+    ];
+
+    const slidercardsContainer = document.getElementById("slidercards");
+    const dotsContainer = document.getElementById("abdulladots");
+
+    // clone first & last
+    const firstClone = `<div class="slidercard"><img src="${images[0]}" alt=""></div>`;
+    const lastClone = `<div class="slidercard"><img src="${images[images.length - 1]}" alt=""></div>`;
+
+    slidercardsContainer.innerHTML = lastClone +
+      images.map(img => `<div class="slidercard"><img src="${img}" alt=""></div>`).join('') +
+      firstClone;
+
+    const slidercards = document.querySelectorAll(".slidercard");
+    let currentIndex = 1;
+
+    // dots
+    images.forEach((_, index) => {
+      const dot = document.createElement("span");
+      dot.classList.add("abdulladot");
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        currentIndex = index + 1;
+        updateSlider();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".abdulladot");
+
+    function updateSlider(animate = true) {
+      const offset = -(currentIndex - 1) * 270;
+      slidercardsContainer.style.transition = animate ? "transform 0.6s ease" : "none";
+      slidercardsContainer.style.transform = `translateX(${offset}px)`;
+
+      slidercards.forEach((card, i) => {
+        card.classList.toggle("active", i === currentIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex - 1);
+      });
+    }
+
+    function checkClone() {
+      if (currentIndex === slidercards.length - 1) {
+        currentIndex = 1;
+        updateSlider(false);
+      }
+      if (currentIndex === 0) {
+        currentIndex = slidercards.length - 2;
+        updateSlider(false);
+      }
+    }
+
+    // auto slide
+    setInterval(() => {
+      currentIndex++;
+      updateSlider();
+    }, 3000);
+
+    slidercardsContainer.addEventListener("transitionend", checkClone);
+
+    updateSlider(false);
+  </script>
+</body>
+</html>

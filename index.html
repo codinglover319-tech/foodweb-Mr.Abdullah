@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodies</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+
+
+</head>
+<body>
+
+
+    <section class="head" >
+    <div class="navbar">
+        <img style="height: 45px;" src="./img/logo-tCGWTeGX.png" alt="">
+        <ul class="mune">
+            <li>Home</li>
+            <li>Menu</li>
+            <li>About Us</li>
+            <li>Facility</li>
+        </ul>
+        <div class="btn_navbar">
+            <span class="search"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="buy" onclick="carddata()"><i class="fa-solid fa-cart-plus"></i></span>
+            <button class="btn" onclick="login()">Login</button>
+            <div class="profile" onclick="profileopen()">
+                <img class="profile_img" src="./img/I am a slow walker, but I never walk back____.jpeg" alt="">
+                <div style="line-height: 13px;">
+                    <h5>Mr.Abduulah <i style="cursor: pointer;" class="fa-solid fa-angle-down"></i></h5>
+                    <p class="p1">babaraliteme@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- loginfrom -->
+    
+  </div>
+  <div class="main_login_div">
+    
+  <form id="signupForm">
+    <input type="text" id="username" placeholder="Enter Username">
+    <p class="error" id="usernameError">Username is required</p>
+
+    <input type="email" id="email" placeholder="Enter Email">
+    <p class="error" id="emailError">Email is required</p>
+
+    <input type="password" id="password" placeholder="Enter Password">
+    <p class="error" id="passwordError">Password is required</p>
+
+    <button type="submit" > Sign Up</button>
+  </form>
+  </div>
+  <div class="carddatamain"> 
+    <button class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i></button>
+<h3 class="empty-msg">Sorry, your cart is empty</h3>
+<!-- <img src="img/User search (1).gif" alt="loading..." width="300"> -->
+ <p class="empty-msg1">Add to cart product</p>
+
+
+  </div>
+  <div class="profile_data">
+    <img class="profile_img1" src="./img/I am a slow walker, but I never walk back____.jpeg" alt="">
+    <h1 style="font-size: 17px;">Mr.Abdullah</h1>
+    <p style="font-size: 15px;">Abdullah1122319@gmail.com</p>
+    <div class="line"></div>
+  </div>
+
+<div class="head_home" style="display: flex;">
+   
+ <div class="text_home" >
+    <h1>The taste of<br/> traditions's with a <br/>modern twist
+</h1>
+<p style="margin-top: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,<br/> voluptas? Voluptate veniam sapiente harum, a qui veritatis <br/>obcaecati nostrum quidem quis expedita unde amet ducimus!
+   
+<div class="btns" style="display: flex; gap: 10px;   margin-top: 40px;  ">
+    <button class="btn">Get Started</button>
+    <button class="btn11" >See Our Menu</button>
+</div>
+</p>
+ </div>  
+ <img  class="main_img" src="./img/foodie-home-ak1eVlt3.png" alt="">  
+</div>
+
+    </section>
+
+    <section class="Foodies">
+        <div class="main_Foodies">
+            <h1>Why <span class="red"> Foodies's</span></h1>
+            <div class="div_main_Foodies">
+
+                <div>
+                    <img src="./img/delivery1-VE-uoCTq.png" alt="">
+                    <p>Easy To Order</p>
+                </div>
+                <div>
+                    <img src="./img/delivery2-1vMH2tRW.png" alt="">
+                    <p>Fastest Delivery</p>
+                </div>
+                <div>
+                    <img src="./img/delivery3-gpGc9IdM.png" alt="">
+                    <p>Best Quality</p>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="overview">
+        <img class="about" src="./img/about-rx7AOsOa.png" alt="">
+         <div class="overview_text">
+            <p class="red p2">Overview</p>
+            <h1>A little information<br> for our guest
+</h1>
+<p class="p3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis<br> quidem veritatis cum cupiditate suscipit autem nisi fugiat<br> quae amet. At beatae mollitia odio tempore est, laborum<br> aliquid voluptatum accusamus neque?
+
+</p>
+  <section class="counter-section">
+    <div class="counter-box">
+      <h2 class="counter" data-target="15000">0</h2>
+      <p>Happy Customer</p>
+    </div>
+    <div class="counter-box">
+      <h2 class="counter" data-target="10">0</h2>
+      <p>Award Win</p>
+    </div>
+    <div class="counter-box">
+      <h2 class="counter" data-target="30">0</h2>
+      <p>Food Menu</p>
+    </div>
+  </section>
+
+ 
+         </div>
+    </section>
+    <section class="Trending">
+        <div class="Trending.head" style="display: flex; margin-left: 120px;margin-top: 50px; ">
+         <h1 class="h11" >Trending <span class="black">Recipes</span></h1>
+         <button class="SeeAll">See All <i class="fa-solid fa-arrow-right"></i></button>
+        
+        </div>
+        <div class="carddata">
+
+        </div>
+    </section>
+   
+  <section class="Collections" >
+    <h1 class="black">Top <span class="red">Collections</span></h1>
+    <p>All our meals in one delicious snap</p>
+       <div>
+
+  <div>
+    <div class="slider">
+      <div class="slides" id="slides">
+        <div class="slide"><img src="img/collection1-Nz0-ENyM.png" alt=""></div>
+        <div class="slide"><img src="img/collection2-afD8tjUL.png" alt=""></div>
+        <div class="slide"><img src="img/c6d30e61-4814-4168-a5c7-66076159d2c4.jpeg" alt=""></div>
+        <div class="slide"><img src="img/Have you ever sprinkled chorizo on your pizza_….jpeg" alt=""></div>
+        <div class="slide"><img src="img/This Cajun Sausage and Rice Skillet is a one-pan….jpeg" alt=""></div>
+        
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+ 
+       </div>
+  </section>
+
+       <section class="Chefs">   <div class="Trending.head" style="display: flex; margin-left: 120px;margin-top: 50px; ">
+         <h1 class="h11" >Meet Our <span class="black">Chefs</span></h1>
+         <button class="SeeAll" style="margin-left: 650px;">See All <i class="fa-solid fa-arrow-right"></i></button>
+        
+           </div>
+          <div class="Chefs_main" style="display: flex; margin-left: 100px; margin-top: 50px;">
+          <div><img src="./img/cheif1-_GG9T0LA.png" alt="">
+          <p>Jhon Deo</p>
+        </div>
+          <div><img src="./img/cheif2-Hvou_Fzi.png" alt="">
+          <p>Jhon Smith</p>
+          </div>
+          <div><img src="./img/cheif3-toURgSnt.png" alt="">
+          <p>Jhon Aleyia </p>
+          </div>
+          <div><img src="img/cheif4-UjZ0uPfE.png" alt="">
+          <p>Jhon Deo</p>
+          </div>
+
+          </div>
+      </section>
+
+
+      <section>
+        <footer class="foodie-footer">
+          <div class="footer_main">
+            <img src="./img/logo-tCGWTeGX.png" alt="">
+  <div class="footer-nav">
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">About Us</a>
+    <a href="#">Facility</a>
+  </div>
+
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+  </div>
+  </div>
+  <hr style="width: 1150px; margin-left: 80px; margin-top: 10px;">
+
+
+ <div class="footer-copy">
+  &copy; 2025 Creative Barber Team || <span class="highlight">Mr. Abdullah</span> 
+</div>
+
+  
+</footer>
+
+      </section>
+
+       <script src="./main.js"></script>
+
+
+   
+</body>
+</html>
